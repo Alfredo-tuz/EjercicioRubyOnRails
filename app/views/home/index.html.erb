@@ -1,0 +1,29 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Archivo Tab - Ejercicio</li>
+    <%if @total.present?%>
+    <li class="breadcrumb-item active" aria-current="page">Total ingreso: $<%=@total%> </li>
+    <%end%>
+  </ol>
+</nav>
+
+<%if @message_error.present?%>
+    <div class="alert alert-error">
+        <ul>
+            <li><%= @message_error %></li>
+        </ul>
+    </div>
+<%end%>
+
+<%if !@total.present? && !@message_error.present?%>    
+<div class="well">
+    <%= form_with(url: {action: :upload}, multipart: true) do %>
+        <div class="form-group">
+           <%= file_field_tag 'file_tab' %>
+        </div>
+         <%= submit_tag("Cargar archivo") %>
+    <% end %>
+</div>
+<%else%>
+    <a href="<%= root_path %>" class="btn btn-danger col-md-4 col-xs-12">Regresar</a>
+<%end%>
