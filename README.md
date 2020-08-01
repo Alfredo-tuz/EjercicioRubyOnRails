@@ -40,11 +40,21 @@ rake db:create
 rake db:migrate
 
 * How to run the test suite
+-No tiene ningun seed para correr ya que son datos que se insertarán de un archivo.
 
 * Services (job queues, cache servers, search engines, etc.)
 Para correr el server 
 ** rails server **
 
 * Deployment instructions
+si deseas deployar el proyecto - corres el siguiente comando HEROKU
+git add .
+git commit -am "make it better"
+git push heroku master
+
+AHORA SI TIENES UN SERVER DEDICADO COMO DIGITAL OCEAN -
+configuras tu ambiente y luego corres el siguiente comando.
+rails s -e production
+
 
 * 
