@@ -17,7 +17,7 @@
 
 <%if !@total.present? && !@message_error.present?%>    
 <div class="well">
-    <%= form_with(url: {action: :upload}, multipart: true) do %>
+    <%= form_with(url: {action: :save_data}, multipart: true) do %>
         <div class="form-group">
            <%= file_field_tag 'file_tab' %>
         </div>
