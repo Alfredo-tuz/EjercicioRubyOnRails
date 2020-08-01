@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+    before_action :authenticate_user!
     #Esta clase proporciona una interfaz completa para archivos y datos CSV .
     #Ofrece herramientas que le permiten leer y escribir desde y hacia Strings u objetos IO, según sea necesario.
     require 'csv'
